@@ -11,8 +11,7 @@ def steps_jan(fp):
         if month == "Jan":
             total_jan = total_jan + jan_steps
         jan_average = total_jan / 29
-        return jan_average, total_jan
-    
+        return jan_average, total_jan    
 def steps_feb(fp):
     total_feb = 0
     for line in fp:
@@ -22,8 +21,7 @@ def steps_feb(fp):
         if month == "Feb":
             total_feb = total_feb + feb_steps
         feb_average = total_feb / 29
-        return feb_average, total_feb
-    
+        return feb_average, total_feb    
 def steps_mar(fp):
     total_mar = 0
     for line in fp:
@@ -34,7 +32,6 @@ def steps_mar(fp):
             total_mar = total_mar + mar_steps
         mar_average = total_mar / 29
         return mar_average, total_mar
-
 def steps_apr(fp):
     total_apr = 0
     for line in fp:
@@ -44,8 +41,7 @@ def steps_apr(fp):
         if month == "Apr":
             total_apr = total_apr + apr_steps
         apr_average = total_apr / 29
-        return apr_average, total_apr
-    
+        return apr_average, total_apr   
 def steps_may(fp):
     total_may = 0
     for line in fp:
@@ -67,7 +63,6 @@ def steps_jun(fp):
             total_jun = total_jun + jun_steps
         jun_average = total_jun / 29
         return jun_average, total_jun
-
 def steps_jul(fp):
     total_jul = 0
     for line in fp:
@@ -77,8 +72,7 @@ def steps_jul(fp):
         if month == "Jul":
             total_jul = total_jul + jul_steps
         jul_average = total_jul / 29
-        return jul_average, total_jul
-    
+        return jul_average, total_jul   
 def steps_aug(fp):
     total_aug = 0
     for line in fp:
@@ -88,8 +82,7 @@ def steps_aug(fp):
         if month == "Aug":
             total_aug = total_aug + aug_steps
         aug_average = total_aug / 29
-        return aug_average, total_aug
-    
+        return aug_average, total_aug   
 def steps_sep(fp):
     total_sep = 0
     for line in fp:
@@ -111,7 +104,6 @@ def steps_oct(fp):
             total_oct = total_oct + oct_steps
         oct_average = total_oct / 29
         return oct_average, total_oct
-
 def steps_nov(fp):
     total_nov = 0
     for line in fp:
@@ -121,8 +113,7 @@ def steps_nov(fp):
         if month == "Nov":
             total_nov = total_nov + nov_steps
         nov_average = total_nov / 29
-        return nov_average, total_nov
-    
+        return nov_average, total_nov 
 def steps_dec(fp):
     total_dec = 0
     for line in fp:
@@ -133,26 +124,23 @@ def steps_dec(fp):
             total_dec = total_dec + dec_steps
         dec_average = total_dec / 29
         return dec_average, total_dec
-
-def main(total_jan, jan_average, total_feb, feb_average, total_mar, mar_average, total_apr, apr_average, total_may, may_average, total_jun, jun_average, total_jul, jul_average, total_aug, aug_average, total_sep, sep_average, total_oct, oct_average, total_nov, nov_average, total_dec, dec_average,):
-    fp = open("data.txt", "r")
-    steps_jan(fp) 
-    steps_feb(fp)
-    steps_mar(fp)
-    steps_apr(fp)
-    steps_may(fp)
-    steps_jun(fp)
-    steps_jul(fp)
-    steps_aug(fp)
-    steps_sep(fp)
-    steps_oct(fp)
-    steps_nov(fp)
-    steps_dec(fp)
-    total_steps = total_apr, total_aug, total_dec, total_feb, total_jan, total_jul, total_jun, total_mar, total_may, total_nov, total_oct, total_sep
-    daily_average = total_steps / 365
-    print(f"Average steps for month:\n Jan: {jan_average} \n Feb: {feb_average} \n Mar: {mar_average} \n Mar: {mar_average} \n Apr: {apr_average} \n May: {may_average} \n Jun: {jun_average} \n Jul: {jul_average} \n Aug: {aug_average} \n Sep: {sep_average} \n Oct: {oct_average} \n Nov: {nov_average}\n Dec: {dec_average}")
-    print(f"Average daily steps:{daily_average}")
-    
-main(total_jan, jan_average, total_feb, feb_average, total_mar, mar_average, total_apr, apr_average, total_may, may_average, total_jun, jun_average, total_jul, jul_average, total_aug, aug_average, total_sep, sep_average, total_oct, oct_average, total_nov, nov_average, total_dec, dec_average)
-        
-    
+def main():
+    fp = open("data.txt", 'r')
+    lines = fp.readlines()
+    jan_average, total_jan = steps_jan(lines)
+    feb_average, total_feb = steps_feb(lines)
+    mar_average, total_mar = steps_mar(lines)
+    apr_average, total_apr = steps_apr(lines)
+    may_average, total_may = steps_may(lines)
+    jun_average, total_jun = steps_jun(lines)
+    jul_average, total_jul = steps_jul(lines)
+    aug_average, total_aug = steps_aug(lines)
+    sep_average, total_sep = steps_sep(lines)
+    oct_average, total_oct = steps_oct(lines)
+    nov_average, total_nov = steps_nov(lines)
+    dec_average, total_dec = steps_dec(lines)
+    total_steps = total_apr, total_aug, total_dec, total_feb, total_jan, total_jul, total_jun,total_mar, total_may, total_nov,total_oct, total_sep
+    daily_average = total_steps/365
+    print(f"Daily average: {daily_average}")
+    print(f"Average for months: January: {jan_average} February: {feb_average} March: {mar_average} April: {apr_average} May: {may_average} June: {jun_average} July: {jul_average} August: {aug_average} September: {sep_average} October: {oct_average} November: {nov_average} December: {dec_average}")
+main()    
