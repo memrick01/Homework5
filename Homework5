@@ -139,7 +139,7 @@ def main():
     oct_average, total_oct = steps_oct(lines)
     nov_average, total_nov = steps_nov(lines)
     dec_average, total_dec = steps_dec(lines)
-    total_steps = total_apr, total_aug, total_dec, total_feb, total_jan, total_jul, total_jun,total_mar, total_may, total_nov,total_oct, total_sep
+    total_steps = total_apr + total_aug + total_dec + total_feb + total_jan + total_jul + total_jun + total_mar + total_may + total_nov +total_oct + total_sep
     daily_average = total_steps/365
     print(f"Daily average: {daily_average}")
     print(f"Average for months: January: {jan_average} February: {feb_average} March: {mar_average} April: {apr_average} May: {may_average} June: {jun_average} July: {jul_average} August: {aug_average} September: {sep_average} October: {oct_average} November: {nov_average} December: {dec_average}")
